@@ -21,7 +21,7 @@ export default function ExclusiveOffer() {
   }
 
   return (
-    <section className="p-30 bg-gradient-to-r from-blue-600 to-green-400 text-white">
+    <section className="py-30 md:p-30 bg-gradient-to-r from-blue-600 to-green-400 text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-6">🎁 Únete Hoy y Obtén un Bono Exclusivo</h2>
         <p className="text-xl mb-8">

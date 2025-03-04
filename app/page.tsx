@@ -1,10 +1,10 @@
-import BenefitsSection from "./components/BenefitsSection";
-import CardsSection from "./components/CardsSection";
-import DescriptionSection from "./components/DescriptionSection";
-import ExclusiveOffer from "./components/ExclusiveOffer";
-import FooterSection from "./components/FooterSection";
-import HeroSection from "./components/HeroSection";
-import RegistrationForm from "./components/RegistrationForm";
+import BenefitsSection from "../components/BenefitsSection";
+import CardsSection from "../components/CardsSection";
+import DescriptionSection from "../components/DescriptionSection";
+import ExclusiveOffer from "../components/ExclusiveOffer";
+import FooterSection from "../components/FooterSection";
+import HeroSection from "../components/HeroSection";
+import RegistrationForm from "../components/RegistrationForm";
 
 export default function Home() {
   return (
