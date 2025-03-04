@@ -19,8 +19,9 @@ export default function RegistrationForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     // Here you would typically send the form data to your backend
-    setStatus("Enviando...");
-
+    console.log('Form data:', formData)
+     setStatus("Enviando...");
+/*
     const response = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,7 +33,7 @@ export default function RegistrationForm() {
       setFormData({ name: "", email: "", type: "" });
     } else {
       setStatus("Error al enviar ❌");
-    }
+    } */
   }
 
   console.log(status)
