@@ -1,5 +1,6 @@
 "use client"
 
+import { sendForm } from "@/lib/actions/user.actions"
 import { useState } from "react"
 
 export default function RegistrationForm() {
@@ -16,29 +17,28 @@ export default function RegistrationForm() {
     setFormData((prevData) => ({ ...prevData, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you would typically send the form data to your backend
-    console.log('Form data:', formData)
-     setStatus("Enviando...");
-/*
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      setStatus("Mensaje enviado ✅");
-      setFormData({ name: "", email: "", type: "" });
-    } else {
+    const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("Enviando...");
+    try {
+      const response = await sendForm({ formData });
+  
+      if (response?.ok) {
+        setStatus("Mensaje enviado ✅");
+        console.log("Mensaje enviado ✅");
+        setFormData({ name: "", email: "", type: "" });
+      } else {
+        setStatus("Error al enviar ❌");
+      }
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
       setStatus("Error al enviar ❌");
-    } */
-  }
+    }
+  };
 
   console.log(status)
   return (
-    <section id="registro" className="py-20 bg-gray-100 text-gray-700" onSubmit={handleSubmit}>
+    <section id="registro" className="py-20 bg-gray-100 text-gray-700">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-10">
           🚀 Únete a la Lista de Espera y Empieza tu Camino hacia la Libertad Financiera
