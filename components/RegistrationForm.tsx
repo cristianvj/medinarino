@@ -25,7 +25,7 @@ export default function RegistrationForm() {
   
       if (response?.ok) {
         setStatus("Mensaje enviado ✅");
-        console.log("Mensaje enviado ✅");
+        alert("Mensaje enviado ✅");
         setFormData({ name: "", email: "", type: "" });
       } else {
         setStatus("Error al enviar ❌");
